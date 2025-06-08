@@ -47,6 +47,12 @@ class TestProductoCRUD(unittest.TestCase):
         resultado = self.crud.eliminar_producto(888)
         self.assertFalse(resultado)
 
+    def test_id_no_se_modifica(self):
+        self.crud.crear_producto(10, "Sal", "Sal marina", 1200, 5)
+        producto = self.crud.actualizar_producto(10, nuevo_precio=1500)
+        self.assertEqual(producto.id, 10)
+
+
 
 if __name__ == '__main__':
     unittest.main()
