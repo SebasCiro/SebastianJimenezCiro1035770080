@@ -9,7 +9,7 @@ class TestProductoCRUD(unittest.TestCase):
 
     def test_crear_producto_exitoso(self):
         arroz = self.crud.crear_producto(
-            1, "Arroz", "Arroz blanco x kilo", 4500, 20)
+            1, "Arroz", "Arroz blanco premium", 4500, 20)
         self.assertEqual(arroz.nombre, "Arroz")
 
     def test_crear_producto_id_duplicado(self):
