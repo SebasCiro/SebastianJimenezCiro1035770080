@@ -36,8 +36,8 @@ class ProductoCRUD:
         return None
 
     def eliminar_producto(self, id):
-        for producto in self.productos:
-            if producto.id == id:
-                self.productos.remove(producto)
-                return True
+        producto = next((p for p in self.productos if p.id == id), None)
+        if producto:
+            self.productos.remove(producto)
+            return True
         return False
